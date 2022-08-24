@@ -7,6 +7,14 @@
   -webkit-box-shadow: 7px 13px 23px 3px rgba(0, 0, 0, 0.85);
   -moz-box-shadow: 7px 13px 23px 3px rgba(0, 0, 0, 0.85);
 }
+.accordion-item:hover {
+  border-left: 5px solid blueviolet;
+  transition-duration: 1s;
+}
+.accordion-opened{
+  border-left: 5px solid blueviolet;
+  transition-duration: 1s;
+}
 .accordion-title{
   display: flex;
   justify-content: space-between;

@@ -11,7 +11,7 @@ const Data = ({ title, body }) => {
     };
 
     return (
-        <div className='accordion-item' onClick={handleClick}>
+        <div className={show ? "accordion-opened accordion-item":'accordion-item'} onClick={handleClick}>
             <div className='accordion-title'>
                 <h5>{title}</h5>
                 <p>

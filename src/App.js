@@ -2,44 +2,52 @@ import React, { useEffect, useState } from 'react'
 import Data from './Data';
 
 
- const App = () => {
+const App = () => {
 
   const url = "https://jsonplaceholder.typicode.com/posts"
-  
+
   const [showData, setShowData] = useState([]);
 
-  const loadData = () =>{
+  const loadData = () => {
     fetch(url, {
       method: "GET",
     })
-    .then((res) => res.json())
-    .then((result) => {
-      if (result) {
-        setShowData((result));
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result) {
+          setShowData((result));
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      })
   };
 
-  useEffect(() =>{
+  useEffect(() => {
     loadData();
   }, []);
 
   return (
     <div className='container'>
-     <h1>React Accordion</h1> 
-    
-    <div className='row'>
+      <h1
+        style={{
+          textAlign: "center",
+          height: "100px",
+          justifyContent: "center",
+          display: "flex",
+          lineHeight: "100px",
+          backgroundColor: "orangered",
+        }}>React Accordion</h1>
 
-        {showData.map((item,index)=>(
+      <div className='row'>
+
+        {showData.map((item, index) => (
           <div className='col-xl-6 col-lg-6 col-md-6 col-md-12' key={index}>
             <Data {...item} />
-          </div> 
+          </div>
         ))}
 
-    </div>
+      </div>
 
     </div>
   )
