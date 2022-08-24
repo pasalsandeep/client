@@ -11,11 +11,13 @@ const Data = ({ title, body }) => {
     };
 
     return (
-        <div className={show ? "accordion-opened accordion-item":'accordion-item'} onClick={handleClick}>
+        <div className={show ? "accordion-opened accordion-item" : 'accordion-item'} onClick={handleClick}>
+            // onMouseEnter={() => setShow(true)}
+            // onMouseLeave={() => setShow(false)}>
             <div className='accordion-title'>
                 <h5>{title}</h5>
                 <p>
-                    {show ? <FcCollapse size={20} /> :  <FcExpand size={20} />}                   
+                    {show ? <FcCollapse size={20} /> : <FcExpand size={20} />}
                 </p>
             </div>
             {show && <p>{body}</p>}
