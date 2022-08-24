@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import Data from './Data';
+
+
  const App = () => {
 
   const url = "https://jsonplaceholder.typicode.com/posts"
@@ -26,11 +29,15 @@ import React, { useEffect, useState } from 'react'
 
   return (
     <div className='container'>
-     <h5>React Accordion</h5> 
+     <h1>React Accordion</h1> 
     
     <div className='row'>
 
-        {showData.map((item,index))}
+        {showData.map((item,index)=>(
+          <div className='col-xl-6 col-lg-6 col-md-6 col-md-12' key={index}>
+            <Data {...item} />
+          </div> 
+        ))}
 
     </div>
 
